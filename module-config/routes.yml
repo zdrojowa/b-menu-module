@@ -1,0 +1,51 @@
+menu:
+  path: /dashboard/menu
+  controller: "{MenuController}@index"
+  methods:
+    - GET
+  permission: MenuModule
+
+menu.ajax:
+  path: /dashboard/menu/ajax
+  controller: "{MenuController}@ajax"
+  methods:
+    - POST
+  permission: MenuModule
+
+menu.create:
+  path: /dashboard/menu/create
+  controller: "{MenuController}@create"
+  methods:
+    - GET
+  permission: MenuModule.add
+  middlewares:
+    - Selene\Modules\LanguageModule\LanguageExists:pl
+
+menu.store:
+  path: /dashboard/menu
+  controller: "{MenuController}@store"
+  methods:
+    - POST
+  permission: MenuModule.add
+
+menu.delete:
+  path: /dashboard/menu/{{menu}}
+  controller: "{MenuController}@destroy"
+  methods:
+    - DELETE
+  permission: MenuModule.delete
+
+menu.edit:
+  path: /dashboard/menu/{{menu}}/edit
+  controller: "{MenuController}@edit"
+  methods:
+    - GET
+  permission: MenuModule.edit
+
+menu.update:
+  path: /dashboard/menu/{{menu}}
+  controller: "{MenuController}@update"
+  methods:
+    - PATCH
+    - PUT
+  permission: MenuModule.edit

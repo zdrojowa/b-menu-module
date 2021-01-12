@@ -1,0 +1,13 @@
+menu:
+  name: Menu
+  icon: mdi mdi-hamburger
+  permission: MenuModule
+  children:
+    list:
+      name: Lista
+      route: MenuModule::menu
+      permission: MenuModule
+    add:
+      name: Dodaj
+      route: MenuModule::menu.create
+      permission: MenuModule.add
