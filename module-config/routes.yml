@@ -18,8 +18,6 @@ menu.create:
   methods:
     - GET
   permission: MenuModule.add
-  middlewares:
-    - Selene\Modules\LanguageModule\LanguageExists:pl
 
 menu.store:
   path: /dashboard/menu
